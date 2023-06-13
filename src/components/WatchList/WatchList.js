@@ -1,9 +1,9 @@
 import React from 'react'
 import MovieCard from '../MovieCard/MovieCard'
 
-const WatchList = props => {
-  const movieDisplay = props.list.map(movie => {
-    return <MovieCard addMovie={props.addMovie} movie={movie} />
+const WatchList = ({ list, removeMovie }) => {
+  const movieDisplay = list.map(movie => {
+    return <MovieCard removeMovie={removeMovie} list={list} movie={movie} />
   })
   return (
     <div className="watchlist">
@@ -14,3 +14,5 @@ const WatchList = props => {
 }
 
 export default WatchList
+
+

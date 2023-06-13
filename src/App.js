@@ -32,6 +32,13 @@ function App () {
     setList([...list, movie])
   }
 
+  const removeMovie = movie => {
+    const newState = list.filter(item => {
+      return item !== movie
+    })
+    setList(newState)
+  }
+
   useEffect(
     () => {
       getData()
@@ -48,13 +55,16 @@ function App () {
           setPage={setPage}
           movieList={movieList}
           addMovie={addMovie}
+          removeMovie={removeMovie}
         />
-        <WatchList list={list} />
+        <WatchList setList={setList} list={list} removeMovie={removeMovie} />
       </main>
     </div>
   )
 }
 
 export default App
+
+
 
 
