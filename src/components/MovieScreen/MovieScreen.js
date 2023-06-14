@@ -3,7 +3,7 @@ import MovieCard from '../MovieCard/MovieCard'
 
 const MovieScreen = ({
   list,
-
+  removeMovie,
   page,
   setPage,
   movieList,
@@ -12,6 +12,7 @@ const MovieScreen = ({
   const movieDisplay = movieList.map(movie => {
     return (
       <MovieCard
+       removeMovie={removeMovie}
         movieList={movieList}
         list={list}
         addMovie={addMovie}
