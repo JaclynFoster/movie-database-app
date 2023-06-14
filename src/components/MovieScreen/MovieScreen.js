@@ -1,5 +1,7 @@
 import React from 'react'
 import MovieCard from '../MovieCard/MovieCard'
+import './MovieScreen.css'
+import { Button } from 'react-bootstrap'
 
 const MovieScreen = ({
   list,
@@ -12,7 +14,7 @@ const MovieScreen = ({
   const movieDisplay = movieList.map(movie => {
     return (
       <MovieCard
-       removeMovie={removeMovie}
+        removeMovie={removeMovie}
         movieList={movieList}
         list={list}
         addMovie={addMovie}
@@ -36,8 +38,10 @@ const MovieScreen = ({
       <h1>Jaclyn's Movie Theatre</h1>
       <h3>Add a Movie to your Watchlist</h3>
       <div className="btn-container">
-        <button onClick={() => decrement()}>Previous</button>
-        <button onClick={() => increment()}>Next</button>
+        <Button onClick={() => decrement()}>Previous</Button>
+        <Button className="next" onClick={() => increment()}>
+          Next
+        </Button>
       </div>
       <div className="movie-container">{movieDisplay}</div>
     </div>
@@ -45,6 +49,7 @@ const MovieScreen = ({
 }
 
 export default MovieScreen
+
 
 
 

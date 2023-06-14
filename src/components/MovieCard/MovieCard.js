@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button, Card, CardTitle } from 'react-bootstrap'
 import './MovieCard.css'
 
 const MovieCard = ({ list, removeMovie, addMovie, movie }) => {
@@ -8,25 +9,30 @@ const MovieCard = ({ list, removeMovie, addMovie, movie }) => {
   })
   const button =
     inWatchList.length === 0 ? (
-      <button onClick={() => addMovie(movie)}>Add To List</button>
+      <Button variant="info" onClick={() => addMovie(movie)}>
+        Add To List
+      </Button>
     ) : (
-      <button onClick={() => removeMovie(movie)}>Remove</button>
+      <Button variant="warning" onClick={() => removeMovie(movie)}>
+        Remove
+      </Button>
     )
   return (
-    <div className="movie-card">
-      <div>
+    <Card className="movie-card">
+      <Card.Body>
         <img
           className="movie-poster"
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
         />
-        <h3>{movie.original_title}</h3>
-      </div>
+        <Card.Title>{movie.original_title}</Card.Title>
+      </Card.Body>
       {button}
-    </div>
+    </Card>
   )
 }
 
 export default MovieCard
+
 
 
 

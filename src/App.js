@@ -1,10 +1,10 @@
-import logo from './logo.svg'
 import './App.css'
 import Header from './components/Header/Header'
 import MovieScreen from './components/MovieScreen/MovieScreen'
 import WatchList from './components/WatchList/WatchList'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { Alert } from 'react-bootstrap'
 
 function App () {
   const [movieList, setMovieList] = useState([])
@@ -36,6 +36,7 @@ function App () {
     const newState = list.filter(item => {
       return item !== movie
     })
+
     setList(newState)
   }
 
@@ -64,6 +65,7 @@ function App () {
 }
 
 export default App
+
 
 
 

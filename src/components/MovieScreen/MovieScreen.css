@@ -1,0 +1,18 @@
+
+
+.page {
+    float: left;
+    color: white;
+    font-weight: bold;
+    font-family: monospace;
+
+}
+
+.btn-container {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: -10%;
+}
+
